@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>檢視</h1></br>
+
+<table class="table table-striped col-md-4 col-md-offset-1">
+  <tr>
+    <td class="col-xs-6 col-sm-3 "><strong>Title:</strong></td>
+    <td><%= @formm.buyday %></td>
+  </tr>
+   <tr>
+    <td><strong>Job type:</strong></td>
+    <td><%= @formm.title %></td>
+  </tr>
+  <tr>
+    <td><strong>Company name:</strong></td>
+    <td><%= @formm.price %></td>
+  </tr>
+    <tr>
+    <td><strong>Company Web:</strong></td>
+    <td><%= @formm.ps %></td>
+  </tr>
+</table>
+
+
+<%= link_to 'Edit', edit_formm_path(@formm), class:'btn btn-primary btn-sm' %> |
+<%= link_to 'Back', formms_path, class:'btn btn-primary btn-warning' %>

@@ -1,0 +1,70 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<h1>帳本目錄</h1></br>
+
+<ul class="nav nav-tabs" role="tablist">
+  <li>
+    <%= link_to '新增帳目', new_formm_path, class:'btn btn-danger btn-sm' %>
+  </li>
+  <li>
+    <%= link_to 'home', formms_path %>
+  </li>
+  <li class="active">
+    <a href="#">月份</a>
+  </li>
+ </ul>
+
+
+
+</br>
+
+    
+    
+    
+<% @march_months.keys.sort.each do |month| %>
+<h2><%= month.strftime("%Y %B") %></h2> 
+ 
+<table class='table table-hover'>
+  <thead>
+    <tr>
+      <th>購買日期</th>
+      <th>品項</th>
+      <th>價格</th>
+      <th>備註</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  
+  <tbody>
+
+    <% for account in @march_months[month] %>  
+        <tr>
+          <td><%= account.buyday.to_s(:long) %></td>
+          <td><%= account.title %> </td>
+          <td> <%= account.price.to_s(:long) %></td>
+          <td> <%= account.ps %></td>
+        </tr>
+    <% end %>  
+    
+    </tbody>
+    
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>總計：<%= @total %></td>
+        <td></td>
+        <td></td>
+      </tr>
+   </tbody>
+</table>
+<% end %>
+    
+ 
+  
+  
+
+  
+

@@ -1,0 +1,59 @@
+
+
+<p id="notice"><%= notice %></p>
+
+
+
+<h1>帳本目錄</h1></br>
+
+<ul class="nav nav-tabs" role="tablist">
+  <li>
+    <%= link_to '新增帳目', new_formm_path, class:'btn btn-danger btn-sm' %>
+  </li>
+  <li class="active">
+    <%= link_to 'home', formms_path, class:'btn btn-warning btn-sm'  %>
+  </li>
+  <li>
+    <a href="march">月份</a>
+  </li>
+</ul>
+
+
+
+</br>
+
+
+</br><table class='table table-hover'>
+  <thead>
+    <tr>
+      <th>購買日期</th>
+      <th>品項</th>
+      <th>價格</th>
+      <th>備註</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <% @formms.each do |formm| %>
+      <tr>
+        <td><%= formm.buyday %></td>
+        <td><%= link_to formm.title,formm_path(formm)%></td>
+        <td><%= formm.price %></td>
+        <td><%= formm.ps %></td>
+        <td><%= link_to 'Destroy', formm, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-success btn-sm' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  <tr>
+    <td></td>
+    <td></td>
+    <td>總計：<%= @total %></td>
+    <td></td>
+    <td></td>
+  </tr>
+  
+</table>
+
+<br>
+

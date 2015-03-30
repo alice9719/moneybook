@@ -1,0 +1,11 @@
+<%= simple_form_for(@formm) do |f| %>
+
+  <div class="field">
+    <%= f.input :buyday, label: '購買日期：' , as: :date, html5: true, input_html: { class: 'form-control', :style=> 'width: 200px'} %></br>
+    <%= f.input :title, label: '項目：', input_html: { class: 'form-control', :style=> 'width: 200px'}  %></br>
+    <%= f.input :price, label: '價格：', input_html: { class: 'form-control', :style=> 'width: 200px'}  %></br>
+    <%= f.input :ps, label: '備註：', as: :text , input_html: { class: 'form-control', :style=> 'width: 200px'}  %></br>
+    <%= f.button :submit ,'完成', :class => "btn btn-info" %></br>
+  </div>
+  
+<% end %>
